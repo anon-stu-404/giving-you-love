@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Sweetest Anha</title>
+  <style>
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460, #533483);
+      background-size: 400% 400%;
+      animation: gradientBG 18s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Arial', cursive;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+      max-width: 800px;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 10;
+    }
+
+    .message {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 1.5s forwards;
+      font-size: 1.8rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .signature {
+      font-size: 2.2rem;
+      font-style: italic;
+      color: #ffb6c1;
+      text-shadow: 0 0 10px #ff69b4;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .message:nth-child(1) { animation-delay: 0.5s; }
+    .message:nth-child(2) { animation-delay: 2s; }
+    .message:nth-child(3) { animation-delay: 4s; }
+    .message:nth-child(4) { animation-delay: 6s; }
+    .signature { animation-delay: 8s; }
+
+    /* Floating Hearts */
+    .heart {
+      position: absolute;
+      pointer-events: none;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0;
+      font-size: 24px;
+      color: #ff69b4;
+      text-shadow: 0 0 10px #ff1493;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+        left: 10%;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+        left: 90%;
+      }
+    }
+
+    /* Twinkling Stars */
+    .star {
+      position: absolute;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.2; }
+      to { opacity: 1; }
+    }
+
+    /* Floating Petals */
+    .petal {
+      position: absolute;
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.8;
+      animation: floatPetal 15s linear infinite;
+    }
+
+    @keyframes floatPetal {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="message">My dearest Anha, if love were a language, I'd spend eternity learning every word just to whisper sweet nothings to your heart.</div>
+    <div class="message">You are the melody that plays in my soul when the world falls silent, the poetry my heart writes when it's too full to speak.</div>
+    <div class="message">Every moment with you feels like stardust - rare, magical, and too beautiful to hold yet impossible to let go.</div>
+    <div class="message">I promise to love you not just when it's easy, but when it's real - through every season, in every shade of emotion, always.</div>
+    <div class="message">And if the universe ever tries to measure what you mean to me, it will fall short — because even infinity would be too small.</div>
+<div class="message">You are my calm in the chaos, the warmth in every cold night, and the reason my silence feels like peace, not loneliness.</div>
+<div class="message">I want to memorize the way your soul glows — so even in darkness, I’ll know how to find my way back to you.</div>
+<div class="message">You are not just the girl I love, Anha — you are the home I never knew I was searching for.</div>
+<div class="message">I want to spend forever discovering the little things about you — the way you smile, the way your eyes soften, the way you say my name.</div>
+<div class="message">Even in a thousand lifetimes, in a thousand worlds, in every version of reality — I’d still find you. I’d still choose you.</div>
+<div class="message">If love had a heartbeat, mine would spell your name. Softly. Endlessly. Faithfully.</div>
+<div class="message">And even if the stars forget to shine one day, I’ll light up the sky with all the love I carry for you inside me.</div>
+<div class="message">Because loving you isn’t just something I do — it’s who I am now.</div>
+<div class="message" style="font-style: italic; color: #ffd6e0;">Forever yours, in every word, in every pause, in every piece of this heart —<br>Rizwan🖤🤍</div>
+    <div class="signature">Forever yours</div>
+  </div>
+
+  <!-- Floating Elements -->
+  <script>
+    // Create hearts
+    for (let i = 0; i < 20; i++) {
+      let heart = document.createElement("div");
+      heart.innerHTML = "❤";
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.top = Math.random() * 100 + "vh";
+      heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+      heart.style.animationDelay = (Math.random() * 5) + "s";
+      heart.style.animationDuration = (5 + Math.random() * 10) + "s";
+      document.body.appendChild(heart);
+    }
+
+    // Create stars
+    for (let i = 0; i < 50; i++) {
+      let star = document.createElement("div");
+      star.classList.add("star");
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.top = Math.random() * 100 + "vh";
+      star.style.width = (Math.random() * 3 + 1) + "px";
+      star.style.height = star.style.width;
+      star.style.animationDelay = (Math.random() * 2) + "s";
+      document.body.appendChild(star);
+    }
+
+    // Create petals
+    const petalColors = ['#ffb6c1', '#ff69b4', '#ff1493', '#db7093', '#ffc0cb'];
+    for (let i = 0; i < 30; i++) {
+      let petal = document.createElement("div");
+      petal.classList.add("petal");
+      petal.style.left = Math.random() * 100 + "vw";
+      petal.style.backgroundImage = `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="${petalColors[Math.floor(Math.random() * petalColors.length)]}" d="M50 0 Q60 40 80 50 Q60 60 50 100 Q40 60 20 50 Q40 40 50 0" /></svg>')`;
+      petal.style.width = (Math.random() * 30 + 15) + "px";
+      petal.style.height = petal.style.width;
+      petal.style.animationDelay = (Math.random() * 10) + "s";
+      petal.style.animationDuration = (10 + Math.random() * 15) + "s";
+      document.body.appendChild(petal);
+    }
+  </script>
+</body>
+  </html>
